@@ -4,7 +4,6 @@ public class LinkedList {
 
     public Node head;
     public Node tail;
-    private int size;
 
     // --------------------------------------------------------------------------
     // 1. append(value) adds a new node containing value to the end of the list.
@@ -25,7 +24,6 @@ public class LinkedList {
             ll.tail.next = new_node; // Set the current tail's next to point to the new node.
             ll.tail = ll.tail.next; // Insert the new node at the tail.
         }
-        ll.size++; // This keeps track of the linked list's size.
         return ll.head;
     }
 
@@ -43,19 +41,26 @@ public class LinkedList {
             newNode.next = head; // If the linked list is not empty, make the current head the next node.
             head = newNode; // Insert the new node at the head.
         }
-        size++; // This keeps track of the linked list's size.
         return head;
     }
 
     // --------------------------------------------------------------------------
     // 3. size returns the total number of nodes in the list.
+
     public int size() {
-        System.out.println("Total number of nodes: " + this.size);
-        return this.size;
+        Node index = this.head;
+        int count = 0;
+        while (index != null) {
+            index = index.next;
+            count++;
+        }
+        System.out.println("Total number of nodes: " + count);
+        return count;
     }
 
     // --------------------------------------------------------------------------
     // 4. head returns the first node in the list.
+
     public Node head() {
         if (this.head != null) {
             System.out.println("The first node's address: " + this.head);
@@ -68,6 +73,7 @@ public class LinkedList {
 
     // --------------------------------------------------------------------------
     // 5. tail returns the last node in the list.
+
     public Node tail() {
         if (this.tail != null) {
             System.out.println("The last node's address: " + this.tail);
@@ -80,7 +86,12 @@ public class LinkedList {
 
     // --------------------------------------------------------------------------
     // 6. at(index) returns the node at the given index.
-    // TODO
+
+    public Node at(int index) {
+        Node currentNode = this.head;
+
+        return currentNode;
+    }
 
     // --------------------------------------------------------------------------
     // 7. pop removes the last element from the list.
@@ -94,7 +105,9 @@ public class LinkedList {
     // 9. find(value) returns the index of the node containing value, or nil if not found.
     // TODO
 
+    // ---------------------------------------------------------------------------------
     // BONUS: print() prints the LinkedList that called it.
+
     public void print() {
 
         Node current = this.head; // Starting at the head, set a node to hold the current value to be printed.
@@ -106,8 +119,5 @@ public class LinkedList {
         }
         System.out.print("\n");
     }
-
-//    public static void main(String[] args) {
-//    }
 
 }
