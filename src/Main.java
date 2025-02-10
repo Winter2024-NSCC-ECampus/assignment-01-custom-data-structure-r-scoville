@@ -19,12 +19,13 @@ public class Main {
         ll.printLL();
 
         // Test the append() method again, now that the linked list is populated.
-         ll.append(3);
-         ll.append(4);
+         ll.append(33);
+         ll.append(400);
          ll.printLL();
 
         // 3. Size: return the total number of nodes in the list.
         ll.size();
+        System.out.println("Total number of nodes: " + ll.size() + "\n");
 
         // 4. Head: return the first node in the list (both the address and the value).
         ll.head();
@@ -33,6 +34,11 @@ public class Main {
         ll.tail();
 
         // 6. At: return the node at the given index.
+        ll.at(0);
+        ll.at(1);
+        ll.at(2);
+        ll.at(3);
+        ll.at(4);
 
         // 7. Pop: remove the last element from the list.
 
