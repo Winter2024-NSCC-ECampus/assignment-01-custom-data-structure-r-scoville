@@ -9,52 +9,51 @@ public class LinkedList {
     // 1. append(value) adds a new node containing value to the end of the list.
     // TODO: Refactor append() to take in only value.
 
-    public Node append(LinkedList ll, int value) {
+    public Node append(int value) {
 
         Node new_node = new Node(value); // Create a new node.
 
-        if (ll.head == null) { // Check if the linked list is empty.
-            ll.head = new_node; // If empty, make the new node the head.
-            ll.tail = ll.head;
+        if (this.head == null) { // Check if the linked list is empty.
+            this.head = new_node; // If empty, make the new node the head.
+            this.tail = this.head;
         } else {
-            ll.tail = ll.head;
-            while (ll.tail.next != null) { // If the linked list is not empty, go to end of the list.
-                ll.tail = ll.tail.next; // Reassign the current tail.
+            this.tail = this.head;
+            while (this.tail.next != null) { // If the linked list is not empty, go to end of the list.
+                this.tail = this.tail.next; // Reassign the current tail.
             }
-            ll.tail.next = new_node; // Set the current tail's next to point to the new node.
-            ll.tail = ll.tail.next; // Insert the new node at the tail.
+            this.tail.next = new_node; // Set the current tail's next to point to the new node.
+            this.tail = this.tail.next; // Insert the new node at the tail.
         }
-        return ll.head;
+        System.out.println("New node successfully appended to linked list.");
+        return this.head;
     }
 
     // --------------------------------------------------------------------------
     // 2. prepend(value) adds a new node containing value to the start of the list.
     // TODO: Refactor prepend() to take in only value.
 
-    public Node prepend(int data, Node head) {
+    public Node prepend(int data) {
 
         Node newNode = new Node(data); // Create a new node
 
-        if (head == null) { // Check if the linked list is empty.
-            head = newNode; // If empty, make the new node the head.
-        } else {
-            newNode.next = head; // If the linked list is not empty, make the current head the next node.
-            head = newNode; // Insert the new node at the head.
-        }
-        return head;
+        newNode.next = this.head; // If the linked list is not empty, make the current head the next node.
+        this.head = newNode; // Insert the new node at the head.
+
+        System.out.println("New node successfully prepended to linked list.");
+        return this.head;
     }
 
     // --------------------------------------------------------------------------
     // 3. size returns the total number of nodes in the list.
 
     public int size() {
-        Node index = this.head;
-        int count = 0;
-        while (index != null) {
+        Node index = this.head; // Create a temporary node to loop through the LL.
+        int count = 0; // Create a count variable to keep track of the size.
+        while (index != null) { // Check if the LL is empty and loop through if not.
             index = index.next;
-            count++;
+            count++; // Increment the count.
         }
-        System.out.println("Total number of nodes: " + count);
+        System.out.println("Total number of nodes: " + count + "\n");
         return count;
     }
 
@@ -64,9 +63,9 @@ public class LinkedList {
     public Node head() {
         if (this.head != null) {
             System.out.println("The first node's address: " + this.head);
-            System.out.println("The first node's value: " + this.head.value);
+            System.out.println("The first node's value: " + this.head.value + "\n");
         } else {
-            System.out.println("This list is empty. There is no head node.");
+            System.out.println("This list is empty. There is no head node. \n");
         }
         return this.head;
     }
@@ -77,9 +76,9 @@ public class LinkedList {
     public Node tail() {
         if (this.tail != null) {
             System.out.println("The last node's address: " + this.tail);
-            System.out.println("The last node's value: " + this.tail.value);
+            System.out.println("The last node's value: " + this.tail.value + "\n");
         } else {
-            System.out.println("This list is empty. There is no tail node.");
+            System.out.println("This list is empty. There is no tail node. \n");
         }
         return this.tail;
     }
@@ -87,11 +86,11 @@ public class LinkedList {
     // --------------------------------------------------------------------------
     // 6. at(index) returns the node at the given index.
 
-    public Node at(int index) {
-        Node currentNode = this.head;
-
-        return currentNode;
-    }
+//    public Node at(int index) {
+//        Node currentNode = this.head;
+//
+//        return currentNode;
+//    }
 
     // --------------------------------------------------------------------------
     // 7. pop removes the last element from the list.
@@ -106,9 +105,9 @@ public class LinkedList {
     // TODO
 
     // ---------------------------------------------------------------------------------
-    // BONUS: print() prints the LinkedList that called it.
+    // BONUS: printLL() prints the LinkedList that called it.
 
-    public void print() {
+    public void printLL() {
 
         Node current = this.head; // Starting at the head, set a node to hold the current value to be printed.
         System.out.print("Linked List: ");
@@ -117,7 +116,7 @@ public class LinkedList {
             System.out.print(current.value + " "); // Print the value of the current node.
             current = current.next; // Go to the next node.
         }
-        System.out.print("\n");
+        System.out.print("\n\n");
     }
 
 }

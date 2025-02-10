@@ -3,25 +3,25 @@ import custom_linkedlist.LinkedList;
 public class Main {
     public static void main(String[] args) {
 
-        // Create an empty list
+        // Create an empty list.
         LinkedList ll = new LinkedList();
 
-        // Test head() and tail() on an empty list
-        ll.head();
-        ll.tail();
+        // Test head() and tail() on an empty list.
+        // ll.head();
+        // ll.tail();
 
         // 1. Append a new node to the end of the list.
-        ll.head = ll.append(ll, 2);
-        ll.print();
+        ll.head = ll.append(2);
+        ll.printLL();
 
         // 2. Prepend a new node to the start of the list.
-        ll.head = ll.prepend(1, ll.head);
-        ll.print();
+        ll.head = ll.prepend(1);
+        ll.printLL();
 
         // Test the append() method again, now that the linked list is populated.
-         ll.append(ll, 3);
-         ll.append(ll, 4);
-         ll.print();
+         ll.append(3);
+         ll.append(4);
+         ll.printLL();
 
         // 3. Size: return the total number of nodes in the list.
         ll.size();
