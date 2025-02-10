@@ -41,6 +41,8 @@ public class Main {
         ll.at(4);
 
         // 7. Pop: remove the last element from the list.
+        ll.pop();
+        ll.pop();
 
         // 8. Contains?: return true if the passed-in value is in the list. Otherwise, return false.
 
