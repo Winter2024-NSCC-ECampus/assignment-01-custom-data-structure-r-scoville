@@ -11,7 +11,8 @@ public class LinkedList {
 
     public Node append(int value) {
 
-        Node newNode = new Node(value); // Create a new node.
+        // Variables
+        Node newNode = new Node(value);
         Node currentNode = head;
 
         if (head == null) { // Check if the linked list is empty.
@@ -32,7 +33,8 @@ public class LinkedList {
 
     public Node prepend(int value) {
 
-        Node newNode = new Node(value); // Create a new node
+        // Variables
+        Node newNode = new Node(value);
 
         newNode.next = head; // If the linked list is not empty, make the current head the next node.
         head = newNode; // Insert the new node at the head.
@@ -46,8 +48,9 @@ public class LinkedList {
 
     public int size() {
 
-        Node index = head; // Create a temporary node to loop through the LL.
-        int count = 0; // Create a count variable to keep track of the size.
+        // Variables
+        Node index = head;
+        int count = 0;
 
         while (index != null) { // Check if the LL is empty and loop through if not.
             index = index.next;
@@ -75,6 +78,7 @@ public class LinkedList {
     // 5. tail returns the last node in the list.
 
     public Node tail() {
+
         Node currentNode = head;
 
         if (currentNode != null) { // Check for an empty list.
@@ -91,9 +95,11 @@ public class LinkedList {
     // 6. at(index) returns the node at the given index.
 
     public Node at(int index) {
-        Node currentNode = head; // Create a node to hold the value to iterate and return.
+
+        // Variables
+        Node currentNode = head;
         int counter = 0;
-        int indexRange = size() - 1; // Create a variable to hold the searchable index range.
+        int indexRange = size() - 1;
 
         if (index > indexRange) { // Error handling for an out-of-bounds index request.
             System.out.println("The requested index is out of bounds. " +
@@ -126,7 +132,7 @@ public class LinkedList {
             }
             prevNode.next = null; // Set the second-last node to be the new tail.
 
-            System.out.println("\nPopped node:");
+            System.out.println("Popped node:");
             System.out.println("- Value: " + currentNode.value);
             System.out.println("- Address: " + currentNode);
             System.out.println("Updated linked list:");
@@ -162,7 +168,7 @@ public class LinkedList {
         }
 
         // If the value is not in the list, return false and let the user know.
-        System.out.println("The linked list contains the value '" + value + "': " + containsValue + "\n");
+        System.out.println("The linked list contains the value '" + value + "': " + containsValue);
         return containsValue;
     }
 
