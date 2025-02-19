@@ -1,8 +1,6 @@
 import custom_linkedlist.LinkedList;
 import custom_linkedlist.Node;
 
-import java.sql.SQLOutput;
-
 public class Main {
     public static void main(String[] args) {
 

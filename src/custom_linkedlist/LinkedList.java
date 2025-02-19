@@ -4,7 +4,6 @@ public class LinkedList {
 
     public Node head;
 
-
     // --------------------------------------------------------------------------
     // 1. append(value) adds a new node containing value to the end of the list.
 
