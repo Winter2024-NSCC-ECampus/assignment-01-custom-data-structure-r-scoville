@@ -2,7 +2,7 @@ package custom_linkedlist;
 
 public class Node {
 
-    int value;
+    public int value;
     Node next;
 
     // Constructor
